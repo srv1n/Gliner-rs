@@ -1,0 +1,37 @@
+[package]
+name = "glinerrust"
+version = "0.1.0"
+edition = "2021"
+authors = ["Sarav <git@sarav.xyz>"]
+description = "A Rust library for named entity recognition using ONNX models"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/srv1n/glinerrust"
+keywords = ["nlp", "ner", "onnx", "machine-learning"]
+categories = ["science::ml", "text-processing"]
+
+[dependencies]
+ort = { version = "2.0.0-rc.6" }
+anyhow = "1.0.89"
+thiserror = "1.0.51"
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.17", features = ["env-filter", "registry"] }
+tracing-appender = "0.2.2"
+tokenizers = "0.20.0"
+ndarray = "0.16.1"
+regex = "1.10.6"
+tokio = { version = "1.40.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+
+
+[dev-dependencies]
+tokio = { version = "1.40.0", features = ["full", "macros"] }
+
+
+[[example]]
+name = "basic_usage"
+
+
+[build]
+# incremental = true
+rustc-wrapper = ""
+
